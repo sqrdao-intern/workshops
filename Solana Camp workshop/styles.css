@@ -1,0 +1,48 @@
+body { font-family: 'Inter', sans-serif; }
+.nav-link { transition: color 0.3s ease, border-color 0.3s ease; }
+.nav-link.active { color: #9945FF; border-bottom-color: #9945FF; }
+.content-section { display: none; }
+.content-section.active { display: block; }
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: calc(100vw - 2rem);
+    margin-left: auto;
+    margin-right: auto;
+    height: 220px;
+    max-height: 400px;
+    overflow-x: auto;
+}
+@media (min-width: 768px) {
+    .chart-container {
+        height: 400px;
+        max-width: 700px;
+    }
+}
+.tab-btn.active, .chart-type-btn.active { background-color: #9945FF; color: white; border-color: #9945FF; }
+.solana-tab-btn.active { background-color: #9945FF; color: white; border-color: #9945FF;} 
+.idea-card.active { border-color: #9945FF; box-shadow: 0 0 15px rgba(153, 69, 255, 0.5); }
+
+/* Modal styles */
+#idea-modal {
+    transition: opacity 0.3s ease;
+}
+
+#idea-modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#idea-modal:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#idea-modal > div {
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+#idea-modal:not(.hidden) > div {
+    transform: scale(1);
+}

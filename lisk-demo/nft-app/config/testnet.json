@@ -1,0 +1,35 @@
+{
+  "label": "lisk-nft-testnet",
+  "version": "1.0.0",
+  "minVersion": "1.0.0",
+  "protocolVersion": "1.0",
+  "port": 7001,
+  "host": "0.0.0.0",
+  "network": {
+    "enabled": true,
+    "seedPeers": [
+      {
+        "ip": "testnet.lisk.io",
+        "port": 7001
+      },
+      {
+        "ip": "testnet-seed-01.lisk.io",
+        "port": 7001
+      }
+    ],
+    "port": 7001
+  },
+  "components": {
+    "logger": {
+      "logFileName": "lisk-nft-testnet.log",
+      "fileLogLevel": "debug",
+      "consoleLogLevel": "info"
+    }
+  },
+  "modules": {
+    "nft": {
+      "enabled": true,
+      "account": {}
+    }
+  }
+}

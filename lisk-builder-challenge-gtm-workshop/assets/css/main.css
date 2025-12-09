@@ -1,0 +1,277 @@
+:root {
+            /* Brand Colors (Lisk-first) */
+            --brand-primary: #0057ff; /* Lisk blue */
+            --brand-primary-600: #1a6bff;
+            --brand-primary-700: #0a50e6;
+            --brand-secondary: #00e0b8; /* teal accent */
+            --brand-secondary-600: #00c9a4;
+            --brand-secondary-700: #00ae90;
+
+            /* Lisk Positive Gradient */
+            --positive-gradient: linear-gradient(90deg, #AEFFC8 0%, #FFF3CA 48.08%, #C38FFF 100%);
+
+            /* Neutrals - Lisk Brand Colors */
+            --neutral-0: #ffffff; /* absolute white */
+            --neutral-50: #f8f8f8; /* dusty white */
+            --neutral-100: #f3f4f6;
+            --neutral-200: #e5e7eb;
+            --neutral-300: #d1d5db;
+            --neutral-400: #9ca3af;
+            --neutral-500: #6b7280;
+            --neutral-600: #4b5563;
+            --neutral-700: #374151;
+            --neutral-800: #2f2f2f; /* slate */
+            --neutral-900: #1f1f1f; /* charcoal */
+
+            /* Status */
+            --success: #16a34a;
+            --warning: #f59e0b;
+            --error: #ef4444;
+
+            /* Background & Text */
+            --background: var(--neutral-0);
+            --foreground: var(--neutral-900);
+            --background-inverse: var(--neutral-900);
+            --foreground-inverse: var(--neutral-0);
+            --surface: var(--neutral-0);
+            --surface-elevated: var(--neutral-0);
+            --border-color: var(--neutral-200);
+            --text-muted: var(--neutral-700);
+
+            /* Typography */
+            --font-sans: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+            /* Type scale (clamp for responsive rhythm) */
+            --text-xs: clamp(0.75rem, 0.72rem + 0.1vw, 0.8rem);
+            --text-sm: clamp(0.875rem, 0.84rem + 0.2vw, 0.95rem);
+            --text-base: clamp(1rem, 0.96rem + 0.25vw, 1.1rem);
+            --text-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.3rem);
+            --text-xl: clamp(1.25rem, 1.15rem + 0.6vw, 1.5rem);
+            --text-2xl: clamp(1.5rem, 1.35rem + 1vw, 2rem);
+            --text-3xl: clamp(1.875rem, 1.6rem + 1.5vw, 2.5rem);
+            --text-4xl: clamp(2.25rem, 1.9rem + 2vw, 3rem);
+            --text-5xl: clamp(3rem, 2.5rem + 3vw, 3.75rem);
+
+            /* Spacing scale (4/8 rhythm) */
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-5: 1.25rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-10: 2.5rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+
+            /* Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-pill: 999px;
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+            /* Motion */
+            --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+            --duration-fast: 150ms;
+            --duration-medium: 220ms;
+            --duration-slow: 320ms;
+
+            /* Component tokens */
+            --button-bg: var(--brand-primary);
+            --button-bg-hover: var(--brand-primary-600);
+            --button-fg: var(--neutral-0);
+            --button-outline: rgba(0, 87, 255, 0.2);
+            
+            /* Additional Lisk brand colors for sections */
+            --lisk-green: #00AA62;
+            --lisk-purple: #613FFF;
+            --lisk-red: #E84D31;
+            --lisk-orange: #E8B14D;
+            --lisk-blue: #2E9AD6;
+        }
+        
+        body {
+            margin: 0;
+            font-family: var(--font-sans);
+            background-color: var(--background);
+            color: var(--foreground);
+        }
+        
+        /* Presentation Container */
+        .presentation-container {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            background: var(--background);
+            font-family: var(--font-sans);
+            color: var(--foreground);
+        }
+        
+        .slides-container {
+            width: 100%;
+            position: relative;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding-bottom: 0;
+        }
+        
+        html {
+            scroll-snap-type: y mandatory;
+        }
+        
+        .slide {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            opacity: 1;
+            transition: opacity var(--duration-medium) var(--ease-standard);
+            padding: 3rem;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            scroll-snap-align: start;
+        }
+        
+        .slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        
+        .slide-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Background elements */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--positive-gradient);
+            mix-blend-mode: color;
+            filter: blur(25px);
+            opacity: 0.2;
+            z-index: 1;
+        }
+        
+        /* Title Slide Styles */
+        .title-slide {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .title-slide h1 {
+            font-size: clamp(2.25rem, 1.2rem + 3vw, 4rem);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--foreground);
+            line-height: 100%;
+            letter-spacing: -0.03em;
+        }
+        
+        .title-slide h2 {
+            font-size: clamp(1.25rem, 0.9rem + 1.2vw, 2rem);
+            margin-bottom: 0.5rem;
+            color: var(--brand-primary);
+            font-weight: 500;
+            line-height: 140%;
+            letter-spacing: -0.02em;
+        }
+        
+        .title-slide h3 {
+            font-size: clamp(1.125rem, 0.85rem + 1vw, 1.5rem);
+            margin-bottom: 2rem;
+            color: var(--brand-primary);
+            font-weight: 500;
+        }
+        
+        .presenter-info {
+            margin-top: 3rem;
+            font-size: 1.1rem;
+            color: var(--neutral-700);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            background: var(--surface);
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--neutral-200);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        /* Common Slide Styles */
+        .slide h2 {
+            font-size: clamp(1.75rem, 1.2rem + 1.6vw, 2.5rem);
+            margin-bottom: 1rem;
+            color: var(--foreground);
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            line-height: 100%;
+        }
+        
+        .slide h3 {
+            font-size: clamp(1.25rem, 1rem + 0.8vw, 1.75rem);
+            margin-bottom: 1.5rem;
+            color: var(--brand-primary);
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            line-height: 140%;
+        }
+        
+        .slide h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--neutral-700);
+            font-weight: 500;
+        }
+        
+        .slide p {
+            font-size: 1.25rem;
+            line-height: 140%;
+            margin-bottom: 1.25rem;
+            color: var(--neutral-700);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+        
+        /* Content Box */
+        .content-box {
+            background: var(--surface);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+            border: 1px solid var(--neutral-200);
+            transition: transform var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard);
+        }
+        
+        .content-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        @media (max-width: 768px) {
+            .slide {
+                padding: 2rem;
+            }
+        }

@@ -1,0 +1,125 @@
+body { font-family: 'Instrument Sans', sans-serif; background-color: #F8FAFC; font-size: 14px; color: #1E293B; line-height: 1.7; }
+h1, .text-3xl, .md\:text-4xl {
+    font-size: 2.25rem !important; /* 36px */
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.01em;
+    color: #3561F6 !important;
+    font-family: 'Instrument Sans', sans-serif !important;
+}
+h2, .text-2xl {
+    font-size: 1.5rem !important; /* 24px */
+    font-weight: 700 !important;
+    line-height: 1.18 !important;
+    color: #3561F6 !important;
+    font-family: 'Instrument Sans', sans-serif !important;
+}
+h3, .text-lg {
+    font-size: 1.125rem !important; /* 18px */
+    font-weight: 600 !important;
+    line-height: 1.22 !important;
+    color: #1E293B !important;
+    font-family: 'Instrument Sans', sans-serif !important;
+}
+p, .text-slate-600, .text-sm {
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #64748B !important;
+    line-height: 1.7 !important;
+    font-family: 'Instrument Sans', sans-serif !important;
+}
+.font-bold { font-weight: 700 !important; font-family: 'Instrument Sans', sans-serif !important; }
+.font-semibold { font-weight: 600 !important; font-family: 'Instrument Sans', sans-serif !important; }
+.font-medium { font-weight: 500 !important; font-family: 'Instrument Sans', sans-serif !important; }
+.leading-relaxed { line-height: 1.7 !important; }
+.leading-tight { line-height: 1.18 !important; }
+.nav-link { transition: color 0.3s, border-color 0.3s, background 0.2s; font-weight: 600; font-size: 1rem; }
+.nav-link.active {
+    color: #3561F6 !important;
+    border-bottom: 4px solid #3561F6 !important;
+    background: rgba(53,97,246,0.04);
+}
+nav.sticky {
+    box-shadow: 0 2px 8px 0 rgba(16,30,54,0.04);
+    background: #fff;
+}
+.content-section { display: none; }
+.content-section.active { display: block; }
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    max-height: 400px;
+}
+@media (min-width: 768px) {
+    .chart-container {
+        height: 400px;
+    }
+}
+/* Section and container spacing */
+.container {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.content-section {
+    margin-bottom: 3.5rem;
+    margin-top: 3.5rem;
+}
+.bg-section-alt {
+    background: #F3F6FA;
+}
+/* Card styles */
+.bg-white, .bg-slate-50 {
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 12px 0 rgba(16,30,54,0.08) !important;
+    border: 1px solid #E2E8F0 !important;
+    padding: 2.5rem !important;
+}
+.rounded-lg, .rounded-xl { border-radius: 1rem !important; }
+.shadow-sm { box-shadow: 0 1px 2px 0 rgba(16,30,54,0.04) !important; }
+.shadow-md { box-shadow: 0 4px 12px 0 rgba(16,30,54,0.08) !important; }
+.border { border-color: #E2E8F0 !important; }
+.text-lisk-blue { color: #3561F6 !important; }
+.text-lisk-muted { color: #64748B !important; }
+.text-lisk { color: #1E293B !important; }
+.border-lisk { border-color: #E2E8F0 !important; }
+.p-6, .md\:p-8 { padding: 2.5rem !important; }
+.mb-8 { margin-bottom: 3.5rem !important; }
+.mt-8 { margin-top: 3.5rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mb-6 { margin-bottom: 2rem !important; }
+.max-w-2xl, .max-w-3xl { max-width: 900px !important; }
+/* Button styles */
+.tab-btn, .chart-type-btn, .lisk-tab-btn {
+    border-radius: 9999px !important;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem !important;
+    border: 1.5px solid #E2E8F0;
+    background: #fff;
+    color: #3561F6;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+    box-shadow: none;
+}
+.tab-btn.active, .chart-type-btn.active, .lisk-tab-btn.active {
+    background-color: #3561F6 !important;
+    color: #fff !important;
+    border-color: #3561F6 !important;
+}
+.tab-btn:hover, .chart-type-btn:hover, .lisk-tab-btn:hover {
+    background: #EBF2FE;
+    color: #3561F6;
+    border-color: #3561F6;
+}
+.nav-link, .tab-btn, .chart-type-btn, .lisk-tab-btn {
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+/* Card grid spacing */
+.grid.md\:grid-cols-3.gap-6 > div {
+    margin-bottom: 2rem;
+} 

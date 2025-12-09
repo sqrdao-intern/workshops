@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Solana dApps: Top 10 Ideas Workshop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Solana-inspired palette with a primary purple (#9945FF) and green (#14F195) for accents, against a neutral slate background. -->
+    <!-- Application Structure Plan: A tab-based single-page application (SPA) with a fixed top navigation. The core of the application is the "Top 10 AI-Powered Solana dApp Ideas" section, where each idea is a clickable card revealing detailed insights. This structure was chosen to provide a highly interactive and explorative experience around the central theme. Other sections (Visualization, Prototyping, Data Stories, Resources) support this core by showcasing relevant AI tools and concepts for building and presenting these ideas. The user flow is: Land -> Explore ideas -> Dive into details of specific ideas -> Learn about tools/data relevant to building/presenting them. -->
+    <!-- Visualization & Content Choices:
+        - Top 10 Ideas -> Goal: Inform/Organize/Inspire -> Viz: Interactive Cards with Detail Panel (HTML/JS) -> Interaction: Click to reveal comprehensive idea details -> Justification: Allows deep exploration of each concept, highlighting AI/Solana synergy.
+        - AI Tool Sections (Visualization, Prototyping) -> Goal: Inform -> Viz: Icon-driven Cards (HTML/Tailwind) -> Interaction: Hover effects -> Justification: Presents relevant tools concisely.
+        - Market Insights Data -> Goal: Compare/Change -> Viz: Bar/Line/Pie Chart (Chart.js/Canvas) -> Interaction: Buttons to update data/chart type -> Justification: Demonstrates data storytelling with mock data relevant to dApp ecosystems.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'solana-purple': '#9945FF',
+                        'solana-green': '#14F195',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-900 text-slate-300 text-base overflow-x-hidden">
+
+    <div class="container mx-auto p-4 md:p-8 overflow-x-hidden">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-solana-purple to-solana-green">Top 10 AI-Powered Solana dApp Ideas</h1>
+            <p class="mt-2 text-slate-400">An Interactive Workshop Guide to Building on Solana with AI</p>
+        </header>
+
+        <nav class="sticky top-0 z-10 bg-slate-900/80 backdrop-blur-lg mb-8 border-b border-slate-700 overflow-x-auto" aria-label="Main Navigation">
+            <ul class="flex justify-start md:justify-center items-center space-x-4 md:space-x-8 text-sm md:text-base font-medium text-slate-400 min-w-max px-2 md:px-0">
+                <li><a href="#welcome" class="nav-link block py-3 md:py-4 text-base border-b-2 border-transparent">Overview</a></li>
+                <li><a href="#ideation" class="nav-link block py-3 md:py-4 text-base border-b-2 border-transparent">Top 10 Ideas</a></li>
+                <li><a href="#visualization" class="nav-link block py-3 md:py-4 text-base border-b-2 border-transparent">Visualization</a></li>
+                <li><a href="#presentations" class="nav-link block py-3 md:py-4 text-base border-b-2 border-transparent">Presentations</a></li>
+                <li><a href="#data" class="nav-link block py-3 md:py-4 text-base border-b-2 border-transparent">Data Stories</a></li>
+                <li><a href="#prototyping" class="nav-link block py-3 md:py-4 text-base border-b-2 border-transparent">Prototyping</a></li>
+                <li><a href="#resources" class="nav-link block py-3 md:py-4 text-base border-b-2 border-transparent">Resources</a></li>
+            </ul>
+        </nav>
+
+        <main id="main-content">
+            
+            <section id="welcome" class="content-section active">
+                <div class="bg-slate-800 p-6 md:p-8 rounded-xl shadow-lg border border-slate-700">
+                    <h2 class="text-2xl font-bold text-solana-purple mb-4">Welcome to the AI-Solana Workshop</h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        This interactive application is your guide to exploring the synergy between Artificial Intelligence and the Solana blockchain. We've curated the top 10 compelling ideas for building dApps that leverage both AI capabilities and Solana's high performance. Navigate through the sections to discover innovative concepts, understand the tools for visual creation and prototyping, learn how to tell data stories, and find resources for your AI-Solana journey.
+                    </p>
+                </div>
+            </section>
+
+            <section id="ideation" class="content-section">
+                <div class="bg-slate-800 p-6 md:p-8 rounded-xl shadow-lg border border-slate-700">
+                    <h2 class="text-2xl font-bold text-solana-purple mb-2">Top 10 AI-Powered Solana dApp Ideas</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        Explore a curated list of innovative dApp ideas that harness the power of AI on the Solana blockchain. Click on each idea to learn more about its problem, AI integration, Solana advantages, and potential impact.
+                    </p>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors cursor-pointer idea-card" data-idea="compute-marketplace">
+                            <div class="text-3xl mb-3">⚡</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Decentralized AI Compute Marketplace</h3>
+                            <p class="text-sm text-slate-400">Connects users with idle GPU power for AI tasks.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors cursor-pointer idea-card" data-idea="model-verification">
+                            <div class="text-3xl mb-3">✅</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">On-Chain AI Model Verification</h3>
+                            <p class="text-sm text-slate-400">Verifies AI model integrity and fairness transparently.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors cursor-pointer idea-card" data-idea="defi-strategy">
+                            <div class="text-3xl mb-3">📈</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">AI-Powered DeFi Strategy Vaults</h3>
+                            <p class="text-sm text-slate-400">AI agents execute optimized DeFi strategies on-chain.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors cursor-pointer idea-card" data-idea="generative-nft">
+                            <div class="text-3xl mb-3">🎨</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Generative AI NFT Platform</h3>
+                            <p class="text-sm text-slate-400">Create unique, AI-generated NFTs on Solana.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors cursor-pointer idea-card" data-idea="content-curation">
+                            <div class="text-3xl mb-3">📰</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">AI-Driven Content Curation (Decentralized Social)</h3>
+                            <p class="text-sm text-slate-400">Personalized content feeds on decentralized social platforms.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors cursor-pointer idea-card" data-idea="predictive-analytics">
+                            <div class="text-3xl mb-3">🔮</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Predictive Analytics for Solana Ecosystem</h3>
+                            <p class="text-sm text-slate-400">AI models predict network activity, token prices, and dApp usage.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors cursor-pointer idea-card" data-idea="ai-gaming">
+                            <div class="text-3xl mb-3">🎮</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">AI-Enhanced Gaming (Play-to-Earn)</h3>
+                            <p class="text-sm text-slate-400">AI NPCs and game mechanics with on-chain transparency.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors cursor-pointer idea-card" data-idea="data-oracle">
+                            <div class="text-3xl mb-3">🔗</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Decentralized AI Data Oracle</h3>
+                            <p class="text-sm text-slate-400">AI models provide verified, real-time off-chain data to smart contracts.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors cursor-pointer idea-card" data-idea="identity-verification">
+                            <div class="text-3xl mb-3">🆔</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">AI-Powered Identity Verification</h3>
+                            <p class="text-sm text-slate-400">AI assists in decentralized identity verification for enhanced privacy.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors cursor-pointer idea-card" data-idea="autonomous-agents">
+                            <div class="text-3xl mb-3">🤖</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Autonomous AI Agents on Solana</h3>
+                            <p class="text-sm text-slate-400">AI agents with on-chain identities and wallets execute tasks.</p>
+                        </div>
+                    </div>
+
+                    <!-- Modal for Idea Details -->
+                    <div id="idea-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+                        <div class="bg-slate-800 rounded-xl shadow-2xl border border-slate-700 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 id="modal-title" class="text-2xl font-bold text-solana-green"></h3>
+                                    <button id="close-modal" class="text-slate-400 hover:text-white text-2xl font-bold leading-none">
+                                        &times;
+                                    </button>
+                                </div>
+                                <div class="space-y-4">
+                                    <div>
+                                        <h4 class="font-semibold text-slate-200 mb-2">Problem Solved</h4>
+                                        <p id="modal-problem" class="text-slate-400 leading-relaxed"></p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-slate-200 mb-2">AI Integration</h4>
+                                        <p id="modal-ai" class="text-slate-400 leading-relaxed"></p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-slate-200 mb-2">Solana Advantage</h4>
+                                        <p id="modal-solana" class="text-slate-400 leading-relaxed"></p>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-slate-200 mb-2">Potential Impact</h4>
+                                        <p id="modal-impact" class="text-slate-400 leading-relaxed"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="visualization" class="content-section">
+                <div class="bg-slate-800 p-6 md:p-8 rounded-xl shadow-lg border border-slate-700">
+                    <h2 class="text-2xl font-bold text-solana-purple mb-2">AI-Powered Visual Creation</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        This section highlights AI tools that empower users to generate and manipulate visual content rapidly. These tools streamline the visual aspects of prototyping and content creation, enabling quick iteration and high-quality outputs for your Solana project's user interfaces and marketing materials.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 gap-y-6 text-center px-2 md:px-0">
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors">
+                            <div class="text-3xl mb-3">🎨</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Canva AI</h3>
+                            <p class="text-sm text-slate-400">Utilize AI features within Canva for quick design generation, image editing, and content creation, suitable for various visual prototyping needs.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors">
+                            <div class="text-3xl mb-3">📦</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Microsoft Designer</h3>
+                            <p class="text-sm text-slate-400">Leverage AI to generate unique designs, social media posts, invitations, and more from text descriptions, aiding visual mockups.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors">
+                            <div class="text-3xl mb-3">🖼️</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Imagen by Gemini</h3>
+                            <p class="text-sm text-slate-400">Create stunning images from text prompts with Imagen 4, Gemini's high-quality text-to-image model. <a href="https://gemini.google/overview/image-generation/?hl=en" class="text-solana-green underline" target="_blank" rel="noopener">Learn more</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="presentations" class="content-section">
+                 <div class="bg-slate-800 p-6 md:p-8 rounded-xl shadow-lg border border-slate-700">
+                    <h2 class="text-2xl font-bold text-solana-purple mb-2">AI-Enhanced Presentations</h2>
+                     <p class="text-slate-400 mb-8 leading-relaxed">
+                        Learn about AI tools that automate slide creation, optimize layouts, and generate video demonstrations. These technologies help you focus on your narrative and message when presenting your Solana AI dApp ideas.
+                    </p>
+                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 gap-y-6 text-center px-2 md:px-0">
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors">
+                             <div class="text-3xl mb-3">✨</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Gamma.app</h3>
+                            <p class="text-sm text-slate-400">Generate entire presentations from a simple text outline or topic, with automated content suggestions and formatting.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors">
+                            <div class="text-3xl mb-3">📊</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Google Slides</h3>
+                            <p class="text-sm text-slate-400">Integrate with AI add-ons for smart layouts, content suggestions, and data visualization directly within your presentations.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors">
+                             <div class="text-3xl mb-3">📹</div>
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Veo 3</h3>
+                            <p class="text-sm text-slate-400">Utilize advanced AI video generation capabilities to create high-quality demo videos and explainers from text or simple inputs.</p>
+                        </div>
+                    </div>
+                    
+
+                 </div>
+            </section>
+            
+            <section id="data" class="content-section">
+                <div class="bg-slate-800 p-6 md:p-8 rounded-xl shadow-lg border border-slate-700">
+                    <h2 class="text-2xl font-bold text-solana-purple mb-2">Storytelling with Data for dApps</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        This module focuses on using AI to transform raw data into compelling narratives relevant to decentralized applications. We explore how AI can assist in analyzing market data, creating powerful visualizations, and generating actionable insights for AI-powered dApps on Solana. Interact with the controls below to explore mock data for different dApp metrics and visualize it using various chart types.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-2 mb-6">
+                        <button class="tab-btn px-4 py-2 text-sm font-semibold bg-slate-700 border border-slate-600 rounded-full hover:bg-slate-600 transition" data-track="ai-compute">AI Compute Usage</button>
+                        <button class="tab-btn px-4 py-2 text-sm font-semibold bg-slate-700 border border-slate-600 rounded-full hover:bg-slate-600 transition" data-track="on-chain-data">On-Chain AI Data</button>
+                        <button class="tab-btn px-4 py-2 text-sm font-semibold bg-slate-700 border border-slate-600 rounded-full hover:bg-slate-600 transition" data-track="user-engagement">dApp User Engagement</button>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-2 mb-6">
+                        <button class="chart-type-btn px-4 py-2 text-sm font-semibold bg-slate-700 border border-slate-600 rounded-full hover:bg-slate-600 transition" data-chart-type="bar">Bar Chart</button>
+                        <button class="chart-type-btn px-4 py-2 text-sm font-semibold bg-slate-700 border border-slate-600 rounded-full hover:bg-slate-600 transition" data-chart-type="line">Line Chart</button>
+                        <button class="chart-type-btn px-4 py-2 text-sm font-semibold bg-slate-700 border border-slate-600 rounded-full hover:bg-slate-600 transition" data-chart-type="pie">Pie Chart</button>
+                    </div>
+                    <div class="grid lg:grid-cols-5 gap-6">
+                        <div class="lg:col-span-3">
+                           <div class="chart-container">
+                                <canvas id="dataStoryChart"></canvas>
+                           </div>
+                        </div>
+                        <div class="lg:col-span-2 bg-slate-800/50 p-6 rounded-lg border border-slate-700">
+                            <h3 id="insight-title" class="font-bold text-lg mb-2 text-solana-purple">Market Insights</h3>
+                            <p id="insight-text" class="text-sm text-slate-400 leading-relaxed">Select a track above to view AI-generated insights and see the corresponding data visualization. This demonstrates how data can be framed to tell a specific story relevant to your audience.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="prototyping" class="content-section">
+                <div class="bg-slate-800 p-6 md:p-8 rounded-xl shadow-lg border border-slate-700">
+                    <h2 class="text-2xl font-bold text-solana-purple mb-2">Rapid Prototyping for AI-Solana dApps</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">
+                        This section focuses on AI tools designed to generate foundational elements for software development, such as smart contract templates and rapid UI/UX code. These tools accelerate the initial coding phase, allowing developers to quickly scaffold and test core functionalities and interactive prototypes for your AI-powered Solana dApps.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 gap-y-6 text-center px-2 md:px-0">
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors">
+                            <img src="img/cursor.png" alt="Cursor Logo" class="mx-auto mb-3 h-12 w-12 object-contain max-w-full h-auto" />
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Cursor</h3>
+                            <p class="text-sm text-slate-400">Explore AI-powered coding assistants to generate boilerplate code for Solana programs in Rust or C, quickly scaffolding common patterns.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors">
+                            <img src="img/poofnew.png" alt="Poof.new Logo" class="mx-auto mb-3 h-12 w-12 object-contain max-w-full h-auto" />
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Poof.new</h3>
+                            <p class="text-sm text-slate-400">Create and deploy full-stack applications instantly with AI-powered code generation. Perfect for rapid prototyping of Solana dApp frontends and backends.</p>
+                        </div>
+                        <div class="bg-slate-800/50 p-6 rounded-lg border border-slate-700 hover:bg-slate-700/50 transition-colors">
+                            <img src="img/codigo.svg" alt="Código Logo" class="mx-auto mb-3 h-12 w-12 object-contain max-w-full h-auto" />
+                            <h3 class="font-bold text-lg mb-2 text-slate-200">Código</h3>
+                            <p class="text-sm text-slate-400">End-to-end Solana AI development platform with specialized AI models trained on Solana protocols. Features cloud-native IDE, intelligent code generation, and one-click deployment for Solana programs.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="resources" class="content-section">
+                <div class="bg-slate-800 p-6 md:p-8 rounded-xl shadow-lg border border-slate-700">
+                    <h2 class="text-2xl font-bold text-solana-purple mb-6">Resources & Best Practices</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 gap-y-8">
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3 text-slate-200">Best Practices for AI Tool Combinations</h3>
+                            <ul class="space-y-2 list-disc list-inside text-slate-400 text-sm">
+                                <li>Use LLMs for initial content, then feed it into presentation tools like Gamma.</li>
+                                <li>Generate visual assets with image AIs to use in Canva/Designer/Imagen mockups.</li>
+                                <li>Combine AI-analyzed data insights with AI video tools for compelling reports.</li>
+                                <li>Leverage Código for Solana-specific smart contract development and Poof.new for rapid full-stack prototyping.</li>
+                                <li>Always start with a clear prompt and iteratively refine it.</li>
+                                <li>Remember that AI is an assistant. Human oversight and creativity are essential.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold mb-3 text-slate-200">Key Discussion Points</h3>
+                            <ul class="space-y-2 list-disc list-inside text-slate-400 text-sm">
+                                <li>Technical limitations and capabilities of current AI tools.</li>
+                                <li>The importance of security audits for any AI-generated code, especially Solana programs.</li>
+                                <li>Ethical considerations, including data privacy and potential biases in AI models.</li>
+                                <li>Creative workflows that blend multiple AI tools to achieve complex results.</li>
+                                <li>The future of AI in dApp development and its impact on developer roles.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- External Resource Links -->
+                    <div class="mt-10">
+                        <h3 class="text-lg font-semibold mb-3 text-solana-purple">External Resources</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 gap-y-6">
+                            <div class="bg-slate-50 p-6 rounded-lg border border-slate-300 shadow-md flex flex-col h-full md:mx-0 mx-auto py-4">
+                                <h4 class="font-bold text-lg mb-2 text-slate-700">Workshop Reference Notebook (NotebookLM)</h4>
+                                <p class="text-slate-600 text-sm mb-4 flex-1">Access curated workshop notes, resources, and supplementary materials in this interactive NotebookLM notebook. Ideal for reviewing concepts, following up on workshop content, and exploring additional references.</p>
+                                <a href="https://notebooklm.google.com/notebook/51d24744-6112-4c26-9f44-75935d16cdd2?_gl=1*szxbtk*_ga*NDY5ODUwMjc3LjE3NTE2MTAwNjM.*_ga_W0LDH41ZCB*czE3NTE2ODU5NTEkbzMkZzEkdDE3NTE2ODYxOTYkajYwJGwwJGgw" target="_blank" rel="noopener" class="inline-block mt-auto text-solana-purple underline hover:text-solana-green focus:outline focus:ring-2 focus:ring-solana-purple rounded font-semibold">Open NotebookLM</a>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-lg border border-slate-300 shadow-md flex flex-col h-full md:mx-0 mx-auto py-4">
+                                <h4 class="font-bold text-lg mb-2 text-slate-700">Castelian's BUIDL Logs (Telegram Channel)</h4>
+                                <p class="text-slate-600 text-sm mb-4 flex-1">Join the Telegram channel for ongoing discussions, updates, and curated content about AI prototyping, data storytelling, and workshop-related topics. Connect with the community and stay informed.</p>
+                                <a href="https://t.me/castelianthoughts" target="_blank" rel="noopener" class="inline-block mt-auto text-solana-purple underline hover:text-solana-green focus:outline focus:ring-2 focus:ring-solana-purple rounded font-semibold">Join Telegram Channel</a>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-lg border border-slate-300 shadow-md flex flex-col h-full md:mx-0 mx-auto py-4">
+                                <h4 class="font-bold text-lg mb-2 text-slate-700">sqrAgent Telegram Bot</h4>
+                                <p class="text-slate-600 text-sm mb-4 flex-1">An intelligent Telegram bot that helps users interact with sqrDAO's ecosystem. sqrAgent answers questions, provides updates, and supports participation in governance and community activities—all within Telegram.</p>
+                                <a href="https://t.me/sqrAgent_bot" target="_blank" rel="noopener" class="inline-block mt-auto text-solana-purple underline hover:text-solana-green focus:outline focus:ring-2 focus:ring-solana-purple rounded font-semibold">Try sqrAgent on Telegram</a>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-lg border border-slate-300 shadow-md flex flex-col h-full md:mx-0 mx-auto py-4">
+                                <h4 class="font-bold text-lg mb-2 text-slate-700">Contact Leo (Telegram)</h4>
+                                <p class="text-slate-600 text-sm mb-4 flex-1">Connect with Leo on Telegram for direct communication, questions about the workshop, AI-Solana development discussions, and personalized guidance on your projects.</p>
+                                <a href="https://t.me/DarthCastelian" target="_blank" rel="noopener" class="inline-block mt-auto text-solana-purple underline hover:text-solana-green focus:outline focus:ring-2 focus:ring-solana-purple rounded font-semibold">Contact on Telegram</a>
+                            </div>
+                            <div class="bg-slate-50 p-6 rounded-lg border border-slate-300 shadow-md flex flex-col h-full md:mx-0 mx-auto py-4">
+                                <h4 class="font-bold text-lg mb-2 text-slate-700">YouAI Platform</h4>
+                                <p class="text-slate-600 text-sm mb-4 flex-1">Explore the YouAI platform for advanced AI tools and resources. Access cutting-edge AI capabilities, models, and development tools that can enhance your AI-powered Solana dApp development workflow.</p>
+                                <a href="https://youai.sqrfund.ai/" target="_blank" rel="noopener" class="inline-block mt-auto text-solana-purple underline hover:text-solana-green focus:outline focus:ring-2 focus:ring-solana-purple rounded font-semibold">Visit YouAI</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+:root {
+  /* Brand Colors (Lisk-first) */
+  --brand-primary: #0057ff; /* Lisk blue */
+  --brand-primary-600: #1a6bff;
+  --brand-primary-700: #0a50e6;
+  --brand-secondary: #00e0b8; /* teal accent */
+  --brand-secondary-600: #00c9a4;
+  --brand-secondary-700: #00ae90;
+
+  /* Lisk Positive Gradient */
+  --positive-gradient: linear-gradient(90deg, #AEFFC8 0%, #FFF3CA 48.08%, #C38FFF 100%);
+
+  /* Neutrals - Lisk Brand Colors */
+  --neutral-0: #ffffff; /* absolute white */
+  --neutral-50: #f8f8f8; /* dusty white */
+  --neutral-100: #f3f4f6;
+  --neutral-200: #e5e7eb;
+  --neutral-300: #d1d5db;
+  --neutral-400: #9ca3af;
+  --neutral-500: #6b7280;
+  --neutral-600: #4b5563;
+  --neutral-700: #374151;
+  --neutral-800: #2f2f2f; /* slate */
+  --neutral-900: #1f1f1f; /* charcoal */
+
+  /* Status */
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --error: #ef4444;
+
+  /* Background & Text */
+  --background: var(--neutral-0);
+  --foreground: var(--neutral-900);
+  --background-inverse: var(--neutral-900);
+  --foreground-inverse: var(--neutral-0);
+  --surface: var(--neutral-0);
+  --surface-elevated: var(--neutral-0);
+  --border-color: var(--neutral-200);
+  --text-muted: var(--neutral-700);
+
+  /* Typography */
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Type scale (clamp for responsive rhythm) */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.1vw, 0.8rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.2vw, 0.95rem);
+  --text-base: clamp(1rem, 0.96rem + 0.25vw, 1.1rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.3rem);
+  --text-xl: clamp(1.25rem, 1.15rem + 0.6vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.35rem + 1vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.6rem + 1.5vw, 2.5rem);
+  --text-4xl: clamp(2.25rem, 1.9rem + 2vw, 3rem);
+  --text-5xl: clamp(3rem, 2.5rem + 3vw, 3.75rem);
+
+  /* Spacing scale (4/8 rhythm) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  /* Motion */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-medium: 220ms;
+  --duration-slow: 320ms;
+
+  /* Component tokens */
+  --button-bg: var(--brand-primary);
+  --button-bg-hover: var(--brand-primary-600);
+  --button-fg: var(--neutral-0);
+  --button-outline: rgba(0, 87, 255, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--neutral-900);
+    --foreground: var(--neutral-100);
+    --background-inverse: var(--neutral-0);
+    --foreground-inverse: var(--neutral-900);
+    --surface: var(--neutral-800);
+    --surface-elevated: var(--neutral-700);
+    --border-color: var(--neutral-600);
+    --text-muted: var(--neutral-400);
+  }
+}
+
+

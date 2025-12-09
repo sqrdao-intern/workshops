@@ -1,0 +1,42 @@
+{
+  "name": "lisk-nft-blockchain",
+  "version": "1.0.0",
+  "description": "Lisk NFT Blockchain Application for Testnet Deployment",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "build": "npm run build:node",
+    "build:node": "tsc",
+    "clean": "rm -rf dist",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
+    "deploy:testnet": "node scripts/deploy-testnet.js",
+    "deploy:mainnet": "node scripts/deploy-mainnet.js",
+    "setup:config": "node scripts/setup-config.js"
+  },
+  "keywords": [
+    "lisk",
+    "blockchain",
+    "nft",
+    "testnet",
+    "cryptocurrency"
+  ],
+  "author": "Lisk NFT Developer",
+  "license": "MIT",
+  "dependencies": {
+    "lisk-sdk": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "eslint": "^8.45.0",
+    "jest": "^29.6.2",
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18.12.0 <19",
+    "npm": ">=8.1.0"
+  }
+}
